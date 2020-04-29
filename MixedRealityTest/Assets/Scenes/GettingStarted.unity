@@ -3577,6 +3577,66 @@ PrefabInstance:
       propertyPath: TouchEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1531281575}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ResetModule
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1531281572}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: BroadcastMessage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_StringArgument
+      value: ResetPlacement
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a318453146caf6408b0e0fb64ca2567, type: 3}
 --- !u!1 &963194225
