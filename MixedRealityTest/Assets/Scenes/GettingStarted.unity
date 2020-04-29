@@ -265,6 +265,12 @@ MonoBehaviour:
   additionalOffset: {x: 0, y: 0, z: 0}
   additionalRotation: {x: 0, y: 0, z: 0}
   updateSolvers: 1
+--- !u!1 &142656790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 998440945789659781, guid: 5a318453146caf6408b0e0fb64ca2567,
+    type: 3}
+  m_PrefabInstance: {fileID: 959927626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &154611710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1866,6 +1872,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   eyeCursorSnapToTargetCenter: 0
+--- !u!1 &391476949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7776472300823529388, guid: 5a318453146caf6408b0e0fb64ca2567,
+    type: 3}
+  m_PrefabInstance: {fileID: 959927626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &451793412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2803,6 +2815,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 959927626}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &633444493 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4130449138915168056, guid: 5a318453146caf6408b0e0fb64ca2567,
+    type: 3}
+  m_PrefabInstance: {fileID: 959927626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2944,6 +2962,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2204069623020599746, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
     type: 3}
   m_PrefabInstance: {fileID: 1544115862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &931117909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 720268733576134842, guid: 5a318453146caf6408b0e0fb64ca2567,
+    type: 3}
+  m_PrefabInstance: {fileID: 959927626}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &959927626
 PrefabInstance:
@@ -3575,6 +3599,36 @@ PrefabInstance:
     - target: {fileID: 8953022295396617916, guid: 5a318453146caf6408b0e0fb64ca2567,
         type: 3}
       propertyPath: TouchEnd.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296003055843, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296003055843, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296003055843, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296003055843, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1531281574}
+    - target: {fileID: 8953022296003055843, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ToggleGameObjects
+      objectReference: {fileID: 0}
+    - target: {fileID: 8953022296003055843, guid: 5a318453146caf6408b0e0fb64ca2567,
+        type: 3}
+      propertyPath: ButtonPressed.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8953022296348192676, guid: 5a318453146caf6408b0e0fb64ca2567,
@@ -4354,6 +4408,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   eyeCursorSnapToTargetCenter: 0
+--- !u!1 &1071270495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6156736339589724103, guid: 5a318453146caf6408b0e0fb64ca2567,
+    type: 3}
+  m_PrefabInstance: {fileID: 959927626}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1091051927 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2204069623020599746, guid: 3f1f46cbecbe08e46a303ccfdb5b498a,
@@ -5627,11 +5687,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjectArray:
-  - {fileID: 623557029}
-  - {fileID: 2066261164}
-  - {fileID: 1330104313}
-  - {fileID: 1628139956}
-  - {fileID: 216360099}
+  - {fileID: 142656790}
+  - {fileID: 1071270495}
+  - {fileID: 931117909}
+  - {fileID: 391476949}
+  - {fileID: 633444493}
 --- !u!114 &1531281575
 MonoBehaviour:
   m_ObjectHideFlags: 0
