@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.XR.WSA;
 
+
 public class SpatialMapping : MonoBehaviour
 {
     /// <summary>
