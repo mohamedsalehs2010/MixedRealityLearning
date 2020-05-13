@@ -27,11 +27,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c3631f5e58749a59194e0cf6baf6d5, type: 3}
   m_Name: Metro Providers
   m_EditorClassIdentifier: 
-  m_RequiresSettingsUpdate: 0
+  m_InitializationComplete: 0
+  m_RequiresSettingsUpdate: 1
   m_AutomaticLoading: 0
   m_AutomaticRunning: 0
   m_Loaders:
-  - {fileID: 11400000, guid: db5f44091a778324e88f54ec8a1bf189, type: 2}
+  - {fileID: 0}
 --- !u!114 &6185683150635143049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,3 +47,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LoaderManagerInstance: {fileID: 422305893950500233}
   m_InitManagerOnStart: 1
+  m_XRManager: {fileID: 0}
+  m_ProviderIntialized: 0
+  m_ProviderStarted: 0
