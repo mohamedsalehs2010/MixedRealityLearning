@@ -606,7 +606,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: MRTKTutorials.ARFoundation
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: C:\Repos\mixed-reality-learning\MRTK Tutorials - AR Foundation\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: Ong Innovations
   metroCertificateIssuer: Ong Innovations
