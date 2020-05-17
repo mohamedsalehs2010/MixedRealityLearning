@@ -1408,6 +1408,7 @@ GameObject:
   - component: {fileID: 484445854}
   - component: {fileID: 484445857}
   - component: {fileID: 484445856}
+  - component: {fileID: 484445858}
   m_Layer: 0
   m_Name: MixedRealityToolkit
   m_TagString: Untagged
@@ -1468,6 +1469,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Camera: {fileID: 0}
+--- !u!114 &484445858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484445853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94c3ca6ba6c9fc46a6084d613b0d89a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disableDiagnosticsSystem: 1
 --- !u!1001 &835469581
 PrefabInstance:
   m_ObjectHideFlags: 0
