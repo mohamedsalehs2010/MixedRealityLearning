@@ -184,8 +184,6 @@ namespace MRTK.Tutorials.AzureCloudPower
 
             // Notify subscribers
             OnFindAnchorSucceeded?.Invoke();
-
-            StopAzureSession();
         }
         #endregion
 
@@ -298,8 +296,6 @@ namespace MRTK.Tutorials.AzureCloudPower
             {
                 Debug.Log(ex.ToString());
             }
-
-            StopAzureSession();
         }
 
         private async void FindAsaAnchor(string anchorId)
@@ -330,15 +326,6 @@ namespace MRTK.Tutorials.AzureCloudPower
                 Debug.Log("Attempt to create watcher failed, no session exists");
                 currentWatcher = null;
             }
-        }
-
-        private async void StopAzureSession()
-        {
-            // Reset the current session if there is one, and wait for any active queries to be stopped
-            await cloudManager.ResetSessionAsync();
-
-            // Stop any existing session
-            cloudManager.StopSession();
         }
         #endregion
         
