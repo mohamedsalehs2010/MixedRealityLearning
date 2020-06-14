@@ -157,6 +157,8 @@ namespace MRTK.Tutorials.AzureCloudPower
                 QueueOnUpdate(() =>
                 {
                     Debug.Log($"Azure anchor located successfully");
+
+                    currentAnchorPositionGo = Instantiate(anchorPositionPrefab, anchorIndicatorGo.transform.position, anchorIndicatorGo.transform.rotation);
 #if WINDOWS_UWP || UNITY_WSA
                     currentAnchorPositionGo.CreateNativeAnchor();
 
@@ -175,6 +177,7 @@ namespace MRTK.Tutorials.AzureCloudPower
                     // Create a native anchor at the location of the object in question
                     currentAnchorPositionGo.CreateNativeAnchor();
 #endif
+                    anchorFinderIndicator.SetTargetObject(currentAnchorPositionGo);
                 });
             }
             else
