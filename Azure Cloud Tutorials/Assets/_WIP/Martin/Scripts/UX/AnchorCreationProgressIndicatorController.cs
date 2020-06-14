@@ -26,7 +26,7 @@ namespace MRTK.Tutorials.AzureCloudPower
             mainCamera = Camera.main;
             
             // Subscribe to Anchor Manager events
-            anchorManager.OnFindAnchorSucceeded += EndProgressIndicatorSession;
+            anchorManager.OnCreateAnchorSucceeded += EndProgressIndicatorSession;
         }
 
         private async void OpenProgressIndicator()
