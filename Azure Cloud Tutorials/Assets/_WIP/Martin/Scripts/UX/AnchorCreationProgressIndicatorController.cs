@@ -82,7 +82,7 @@ namespace MRTK.Tutorials.AzureCloudPower
         /// </summary>
         public void EndProgressIndicatorSession()
         {
-            Debug.Log("__\nAnchorCreationProgressIndicatorController.StartProgressIndicatorSession()");
+            Debug.Log("__\nAnchorCreationProgressIndicatorController.EndProgressIndicatorSession()");
 
             waitingForAnchorCreation = false;
         }

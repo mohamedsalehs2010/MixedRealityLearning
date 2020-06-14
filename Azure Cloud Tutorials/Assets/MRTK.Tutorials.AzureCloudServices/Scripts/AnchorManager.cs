@@ -148,6 +148,8 @@ namespace MRTK.Tutorials.AzureCloudPower
         #region EVENT HANDLERS
         private void CloudManager_AnchorLocated(object sender, AnchorLocatedEventArgs args)
         {
+            Debug.Log("__\nAppManager.CloudManager_AnchorLocated()");
+
             QueueOnUpdate(new Action(() => Debug.Log($"Anchor recognized as a possible Azure anchor")));
 
             if (args.Status == LocateAnchorStatus.Located || args.Status == LocateAnchorStatus.AlreadyTracked)
@@ -163,7 +165,6 @@ namespace MRTK.Tutorials.AzureCloudPower
                     currentAnchorPositionGo.CreateNativeAnchor();
 
                     if (currentCloudAnchor == null) return;
-                    Debug.Log("Local anchor position successfully set to Azure anchor position");
 
                     currentAnchorPositionGo.GetComponent<UnityEngine.XR.WSA.WorldAnchor>().SetNativeSpatialAnchorPtr(currentCloudAnchor.LocalAnchor);
 #elif UNITY_ANDROID || UNITY_IOS
@@ -178,6 +179,8 @@ namespace MRTK.Tutorials.AzureCloudPower
                     currentAnchorPositionGo.CreateNativeAnchor();
 #endif
                     anchorFinderIndicator.SetTargetObject(currentAnchorPositionGo);
+
+                    Debug.Log("Local anchor position successfully set to Azure anchor position");
                 });
             }
             else
@@ -222,7 +225,7 @@ namespace MRTK.Tutorials.AzureCloudPower
 
         private async void CreateAsaAnchor(GameObject anchorPositionGo)
         {
-            Debug.Log("\nAnchorManager.CreateAsaAnchor()");
+            Debug.Log("__\nAnchorManager.CreateAsaAnchor()");
 
             if (cloudManager.Session == null)
             {
@@ -289,7 +292,7 @@ namespace MRTK.Tutorials.AzureCloudPower
                 }
                 else
                 {
-                    Debug.Log($"Failed to save cloud anchor with ID '{CurrentAzureAnchorId}' to Azure");
+                    Debug.Log($"Failed to save anchor to Azure");
 
                     // Notify subscribers
                     OnCreateAnchorFailed?.Invoke();
@@ -303,7 +306,7 @@ namespace MRTK.Tutorials.AzureCloudPower
 
         private async void FindAsaAnchor(string anchorId)
         {
-            Debug.Log("\nAnchorManager.FindAsaAnchor()");
+            Debug.Log("__\nAnchorManager.FindAsaAnchor()");
 
             if (cloudManager.Session == null)
             {
@@ -318,11 +321,14 @@ namespace MRTK.Tutorials.AzureCloudPower
             var anchorsToFind = new List<string> {anchorId};
 
             anchorLocateCriteria = new AnchorLocateCriteria {Identifiers = anchorsToFind.ToArray()};
+            Debug.Log($"Anchor locate criteria configured to look for Azure anchor with ID '{anchorId}'");
 
             // Start watching for Anchors
             if ((cloudManager != null) && (cloudManager.Session != null))
             {
                 currentWatcher = cloudManager.Session.CreateWatcher(anchorLocateCriteria);
+                Debug.Log("Watcher created");
+                Debug.Log("Looking for Azure anchor... please wait...");
             }
             else
             {
