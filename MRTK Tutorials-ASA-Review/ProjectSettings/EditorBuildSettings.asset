@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/AzureSpatialAnchors.unity
+    guid: 85cac2b26c1ba0d4181c92b9d4599359
   m_configObjects: {}
