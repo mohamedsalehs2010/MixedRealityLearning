@@ -598,7 +598,7 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: MRTKTutorials-sharing-review
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: X:\unity\Projects\MixedRealityLearning2\MRTK Tutorials-Sharing-Review\Assets\WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
