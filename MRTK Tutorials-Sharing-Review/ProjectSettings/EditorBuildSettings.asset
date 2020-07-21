@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MRTKSharing.unity
+    guid: 4d649f94c00ed0f4189b2943570d071d
   m_configObjects: {}
