@@ -1,0 +1,501 @@
+authoredBy:
+  descriptor: aad.MjJjMTBhZjktNzk1NS03ZjYzLTgwOTEtZGIzNzA5ZDAzYzc3
+  directoryAlias: 
+  displayName: Ong Innovations
+  id: 22c10af9-7955-6f63-8091-db3709d03c77
+  imageUrl: https://dev.azure.com/onginnovations/_apis/GraphProfile/MemberAvatars/aad.MjJjMTBhZjktNzk1NS03ZjYzLTgwOTEtZGIzNzA5ZDAzYzc3
+  inactive: 
+  isAadIdentity: 
+  isContainer: 
+  isDeletedInOrigin: 
+  profileUrl: 
+  uniqueName: azure@onginnovations.com
+  url: https://spsprodcus3.vssps.visualstudio.com/Aedaa26d2-f811-4c27-b1a7-9dfd98863a3a/_apis/Identities/22c10af9-7955-6f63-8091-db3709d03c77
+badgeEnabled: 
+buildNumberFormat: 
+comment: 
+createdDate: 2020-08-14T14:34:59.8970000+02:00
+demands: 
+description: 
+draftOf: 
+drafts: []
+dropLocation: 
+id: 13
+jobAuthorizationScope: projectCollection
+jobCancelTimeoutInMinutes: 5
+jobTimeoutInMinutes: 60
+latestBuild: 
+latestCompletedBuild: 
+metrics: 
+name: MixedRealityLearning-0783c339-b295-43a1-b29f-39a02577e02d
+options:
+- definition:
+    id: 5d58cc01-7c75-450c-be18-a388ddb129ec
+  enabled: false
+  inputs:
+    additionalFields: '{}'
+    branchFilters: '["+refs/heads/*"]'
+- definition:
+    id: a9db38f9-9fdc-478c-b0f9-464221e58316
+  enabled: false
+  inputs:
+    additionalFields: '{}'
+    assignToRequestor: true
+    workItemType: Bug
+path: '\'
+process:
+  phases:
+  - condition: succeeded()
+    jobAuthorizationScope: projectCollection
+    jobCancelTimeoutInMinutes: 60
+    jobTimeoutInMinutes: 240
+    name: 'Unity Build Agent '
+    refName: Job_1
+    steps:
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Unity Get Project Version
+      enabled: false
+      environment: {}
+      inputs:
+        unityProjectPath: MRTK Tutorials-Sharing-Review
+      refName: UnityProjectVersion
+      task:
+        definitionType: task
+        id: 38ec98bf-601a-4390-9f2e-23d43dd6dbba
+        versionSpec: 1.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Install Unity Setup PowerShell Module
+      enabled: false
+      environment: {}
+      inputs:
+        arguments: ''
+        errorActionPreference: stop
+        failOnStderr: true
+        filePath: ''
+        ignoreLASTEXITCODE: false
+        pwsh: false
+        script: Install-Module -Name UnitySetup -Scope CurrentUser -Force -EA SilentlyContinue -Verbose
+        targetType: inline
+        workingDirectory: ''
+      task:
+        definitionType: task
+        id: e213ff0f-5d5c-4791-802d-52ea3e7be1f1
+        versionSpec: 2.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Install Unity Editor (Project Version)
+      enabled: false
+      environment: {}
+      inputs:
+        arguments: ''
+        errorActionPreference: stop
+        failOnStderr: false
+        filePath: ''
+        ignoreLASTEXITCODE: false
+        pwsh: false
+        script: Install-UnitySetupInstance -Installers (Find-UnitySetupInstaller -Version '$(UnityProjectVersion.projectVersion)' -Components Windows,Windows_IL2CPP) -Verbose
+        targetType: inline
+        workingDirectory: ''
+      task:
+        definitionType: task
+        id: e213ff0f-5d5c-4791-802d-52ea3e7be1f1
+        versionSpec: 2.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: true
+      displayName: Unity Activate License
+      enabled: true
+      environment: {}
+      inputs:
+        customUnityEditorsPath: C:\Program Files\Unity\Hub\Editor\2019.2.9f1\Editor\Unity.exe
+        password: ?OngAzure2020
+        serial: SC-4HCB-TPAA-H9B4-6TGA-GJBR
+        unityEditorsPathMode: unityHub
+        unityProjectPath: MRTK Tutorials-Sharing-Review
+        username: azure@onginnovations.com
+      refName: logfile
+      task:
+        definitionType: task
+        id: 13159b9a-b7ba-4977-922c-2b5cb63c90df
+        versionSpec: 1.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Unity Build UWP
+      enabled: true
+      environment: {}
+      inputs:
+        acceptApiUpdate: false
+        buildScenes: ''
+        buildTarget: WindowsStoreApps
+        customUnityEditorsPath: C:\Program Files\Unity\Hub\Editor
+        developmentBuild: false
+        noGraphics: false
+        noPackageManager: false
+        outputFileName: drop
+        unityEditorsPathMode: unityHub
+        unityProjectPath: MRTK Tutorials-Sharing-Review
+      refName: unitybuildtask
+      task:
+        definitionType: task
+        id: 64e90d50-a9c0-11e8-a356-d3eab7857116
+        versionSpec: 2.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Install NuGet
+      enabled: true
+      environment: {}
+      inputs:
+        checkLatest: false
+        versionSpec: ''
+      task:
+        definitionType: task
+        id: 2c65196a-54fd-4a02-9be8-d9d1837b7c5d
+        versionSpec: 1.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: NuGet restore
+      enabled: true
+      environment: {}
+      inputs:
+        allowPackageConflicts: false
+        arguments: ''
+        basePath: ''
+        buildProperties: ''
+        command: restore
+        configurationToPack: $(BuildConfiguration)
+        disableParallelProcessing: false
+        externalEndpoint: ''
+        externalEndpoints: ''
+        feedPublish: ''
+        feedRestore: ''
+        includeNuGetOrg: true
+        includeReferencedProjects: false
+        includeSymbols: false
+        noCache: false
+        nuGetFeedType: internal
+        nugetConfigPath: ''
+        outputDir: $(Build.ArtifactStagingDirectory)
+        packTimezone: utc
+        packagesDirectory: ''
+        publishPackageMetadata: true
+        requestedMajorVersion: 1
+        requestedMinorVersion: 0
+        requestedPatchVersion: 0
+        searchPatternPack: '**/*.csproj'
+        searchPatternPush: $(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg
+        selectOrConfig: config
+        solution: '**/*.sln'
+        toolPackage: false
+        verbosityPack: Detailed
+        verbosityPush: Detailed
+        verbosityRestore: Detailed
+        versionEnvVar: ''
+        versioningScheme: off
+      task:
+        definitionType: task
+        id: 333b11bd-d341-40d9-afcf-b32d5ce6f23b
+        versionSpec: 2.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Build VS Solution (**/*.sln)
+      enabled: true
+      environment: {}
+      inputs:
+        clean: true
+        configuration: Release
+        createLogFile: false
+        logFileVerbosity: normal
+        logProjectEvents: false
+        maximumCpuCount: false
+        msbuildArchitecture: x64
+        msbuildArguments: /m:1 /p:AppxBundlePlatforms="ARM64" /p:AppxPackageDir="$(build.artifactStagingDirectory)\AppxPackages" /p:AppxBundle=Always /p:UapAppxPackageBuildMode=StoreUpload
+        msbuildLocation: ''
+        msbuildLocationMethod: version
+        msbuildVersion: latest
+        platform: ARM64
+        restoreNugetPackages: false
+        solution: '**/*.sln'
+      task:
+        definitionType: task
+        id: c6c4c611-aa2e-4a33-b606-5eaba2196824
+        versionSpec: 1.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Copy package from Build Directory to Staging Directory
+      enabled: true
+      environment: {}
+      inputs:
+        arguments: ''
+        errorActionPreference: stop
+        failOnStderr: false
+        filePath: ''
+        ignoreLASTEXITCODE: false
+        pwsh: false
+        script: "\"`r`nVerifying staging directory...\"\nGet-ChildItem -Path $(build.artifactstagingdirectory)\\*.* -Recurse -Force\n \n\"`r`nCleanup staging directory...\"\nRemove-Item -Path \"$(build.artifactstagingdirectory)\\*\" -Recurse -Force\n\n\"`r`nVerifying staging directory.......\"\nGet-ChildItem -Path $(build.artifactstagingdirectory)\\*.* -Recurse -Force\n\n\"`r`nCopying artifacts to staging directory...\"\nCopy-Item \"$(Agent.BuildDirectory)\\**\\AppxPackages\\*_Test\\*.appxsym\" -Destination \"$(build.artifactstagingdirectory)\" -Force\n\n\"`r`nCopying artifacts to staging directory is done.\"\n\n\"`r`nVerifying staging directory final...\"\nGet-ChildItem -Path $(build.artifactstagingdirectory)\\*.* -Recurse -Force"
+        targetType: inline
+        workingDirectory: ''
+      task:
+        definitionType: task
+        id: e213ff0f-5d5c-4791-802d-52ea3e7be1f1
+        versionSpec: 2.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Copy package from $(Agent.BuildDirectory) to $(Build.ArtifactStagingDirectory)
+      enabled: false
+      environment: {}
+      inputs:
+        CleanTargetFolder: true
+        Contents: >+
+          **\AppxPackages\*_Test\*.appxsym
+
+
+        OverWrite: true
+        SourceFolder: $(Agent.BuildDirectory)
+        TargetFolder: $(build.artifactstagingdirectory)
+        flattenFolders: false
+        preserveTimestamp: false
+      task:
+        definitionType: task
+        id: 5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c
+        versionSpec: 2.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Distribute to App Center
+      enabled: true
+      environment: {}
+      inputs:
+        app: $(build.artifactstagingdirectory)\**\*.appxsym
+        appSlug: OngInnovations-AutoDevOpsSystem/azure-AT-onginnovations.com-MixedRealityLearning-0783c339-b295-43a1-b29f-39a02577e02d
+        appxsymPath: ''
+        buildVersion: ''
+        destinationGroupIds: ''
+        destinationStoreId: ''
+        destinationType: groups
+        dsymPath: ''
+        isMandatory: false
+        isSilent: false
+        mappingTxtPath: ''
+        nativeLibrariesPath: ''
+        packParentFolder: false
+        releaseNotesFile: ''
+        releaseNotesInput: Test Distribution
+        releaseNotesSelection: input
+        serverEndpoint: 9a12e342-d2c5-4011-9d19-0c06cf2464be
+        symbolsPath: ''
+        symbolsType: UWP
+      refName: ''
+      task:
+        definitionType: task
+        id: b832bec5-8c27-4fef-9fb8-6bec8524ad8a
+        versionSpec: 3.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Get Latest Release Link
+      enabled: true
+      environment: {}
+      inputs:
+        arguments: ''
+        errorActionPreference: stop
+        failOnStderr: false
+        filePath: ''
+        ignoreLASTEXITCODE: false
+        pwsh: false
+        script: "# Execute REST call to get the latest release info using app secrete.\n\n$response = Invoke-RestMethod -Uri \"https://api.appcenter.ms/v0.1/sdk/apps/c880a9cd-44c9-4884-b6be-8f537c89cf1c/releases/private/latest\" -Method Get -Headers @{'X-API-Token' = '9b12b120a01fc55f2bb1459beb9ba35db95b487f' \n'accept’ = ‘application/json'}\n\n#Construct the latest release url from the response\n$latestReleaseURL = \"https://appcenter.ms/orgs/OngInnovations-AutoDevOpsSystem/apps/\"+$response.app_name+\"/distribute/releases/\"+$response.id\n\n#Echo latest release url\n$latestReleaseURL\n\n#Write the latest release URL to an Env. variable to be used in the next task\nWrite-Output \"##vso[task.setvariable variable=latestReleaseURL;]$latestReleaseURL\""
+        targetType: inline
+        workingDirectory: ''
+      refName: ''
+      task:
+        definitionType: task
+        id: e213ff0f-5d5c-4791-802d-52ea3e7be1f1
+        versionSpec: 2.*
+      timeoutInMinutes: 0
+    - alwaysRun: false
+      condition: succeeded()
+      continueOnError: false
+      displayName: Notify the New App Release
+      enabled: true
+      environment: {}
+      inputs:
+        msg: >-
+          Your app new version has been released successfully!
+
+          You can download it from [here]($(latestReleaseURL))
+
+
+
+          _Brought to you by:_
+
+          _**Ong Innovations Auto DevOps System**_
+        themeColor: ''
+        title: 'New App Release! '
+        url: https://outlook.office.com/webhook/bbf64e00-0e88-4d43-9f2a-b21fb83bf4ca@82be4827-2b7b-4ece-9767-9ffe0755c092/IncomingWebhook/1aec4af18ba74d41a0838dce66d091f2/7c2e87db-db89-4a1f-8352-249e0f9cb898
+      task:
+        definitionType: task
+        id: de88fedd-bc2d-4045-b476-17d35a3fee55
+        versionSpec: 0.*
+      timeoutInMinutes: 0
+    target:
+      allowScriptsAuthAccessOption: false
+      executionOptions:
+        type: 0
+      queue:
+        _links:
+          self:
+            href: https://dev.azure.com/onginnovations/_apis/build/Queues/46
+        id: 46
+        pool: 
+        url: https://dev.azure.com/onginnovations/_apis/build/Queues/46
+      type: 1
+  type: 1
+processParameters:
+  dataSourceBindings: 
+  inputs: 
+  sourceDefinitions: 
+project:
+  abbreviation: 
+  defaultTeamImageUrl: 
+  description: >-
+    This project is dedicated for the "Auto DevOps System".
+
+
+    Auto DevOps System shall allow developers to submit requests with just few clicks and have their pipelines automatically created on Azure DevOps according to predefined templates.
+
+
+    All pipelines those are going to be created through the Auto DevOps System shall go by default under this project.
+  id: 6adfa86b-52c9-4672-82e6-00411f7329d6
+  lastUpdateTime: 2020-08-05T14:50:54.1830000Z
+  name: AutoDevOpsSystem
+  revision: 40
+  state: wellFormed
+  url: https://dev.azure.com/onginnovations/_apis/projects/6adfa86b-52c9-4672-82e6-00411f7329d6
+  visibility: private
+properties: {}
+quality: definition
+queue:
+  id: 46
+  name: AutoDevOpsSystem Self-hosted Agents
+  pool:
+    id: 15
+    isHosted: 
+    name: AutoDevOpsSystem Self-hosted Agents
+  url: https://dev.azure.com/onginnovations/_apis/build/Queues/46
+queueStatus: enabled
+repository:
+  checkoutSubmodules: false
+  clean: false
+  defaultBranch: overhaul-temp/sharing-build-out
+  id: mohamedsalehs2010/MixedRealityLearning
+  name: mohamedsalehs2010/MixedRealityLearning
+  properties:
+    apiUrl: https://api.github.com/repos/mohamedsalehs2010/MixedRealityLearning
+    archived: False
+    branchesUrl: https://api.github.com/repos/mohamedsalehs2010/MixedRealityLearning/branches
+    checkoutNestedSubmodules: false
+    cleanOptions: 0
+    cloneUrl: https://github.com/mohamedsalehs2010/MixedRealityLearning.git
+    connectedServiceId: 15ea8886-575e-49f1-8070-8d0274e74351
+    defaultBranch: development
+    externalId: 285657790
+    fetchDepth: 0
+    fullName: mohamedsalehs2010/MixedRealityLearning
+    gitLfsSupport: false
+    hasAdminPermissions: True
+    isFork: True
+    isPrivate: False
+    labelSources: 0
+    labelSourcesFormat: $(build.buildNumber)
+    lastUpdated: 08/06/2020 19:46:51
+    manageUrl: https://github.com/mohamedsalehs2010/MixedRealityLearning
+    nodeId: MDEwOlJlcG9zaXRvcnkyODU2NTc3OTA=
+    orgName: mohamedsalehs2010
+    ownerAvatarUrl: https://avatars3.githubusercontent.com/u/37018353?v=4
+    ownerId: 37018353
+    ownerIsAUser: True
+    refsUrl: https://api.github.com/repos/mohamedsalehs2010/MixedRealityLearning/git/refs
+    reportBuildStatus: true
+    safeRepository: mohamedsalehs2010/MixedRealityLearning
+    shortName: MixedRealityLearning
+    skipSyncSource: false
+  rootFolder: 
+  type: 0
+  url: https://github.com/mohamedsalehs2010/MixedRealityLearning.git
+retentionRules: 
+revision: 132
+tags: []
+triggers:
+- batchChanges: false
+  branchFilters:
+  - +Dev_Working_Branch
+  maxConcurrentBuildsPerBranch: 1
+  pathFilters: []
+  pollingInterval: 0
+  triggerType: continuousIntegration
+type: build
+uri: vstfs:///Build/Definition/13
+url: https://dev.azure.com/onginnovations/6adfa86b-52c9-4672-82e6-00411f7329d6/_apis/build/Definitions/13?revision=132
+variableGroups:
+- alias: 
+  description: This group holds variables required for Unity installation and license activation.
+  id: 1
+  name: Unity
+  type: Vsts
+  variables:
+    password:
+      allowOverride: 
+      isSecret: true
+      value: 
+    projectPath:
+      allowOverride: 
+      isSecret: 
+      value: MRTK Tutorials/
+    serial:
+      allowOverride: 
+      isSecret: 
+      value: SC-4HCB-TPAA-H9B4-6TGA-GJBR
+    username:
+      allowOverride: 
+      isSecret: true
+      value: 
+- alias: 
+  description: ''
+  id: 2
+  name: AccessSecretes
+  type: Vsts
+  variables:
+    appCenterAPIKey:
+      allowOverride: 
+      isSecret: true
+      value: 
+variables:
+  latestReleaseURL:
+    allowOverride: 
+    isSecret: 
+    value: ''
+  system.debug:
+    allowOverride: true
+    isSecret: 
+    value: false
