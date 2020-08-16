@@ -1,19 +1,4 @@
 name: MixedRealityLearning-0783c339-b295-43a1-b29f-39a02577e02d
-options:
-- definition:
-    id: 5d58cc01-7c75-450c-be18-a388ddb129ec
-  enabled: false
-  inputs:
-    additionalFields: '{}'
-    branchFilters: '["+refs/heads/*"]'
-- definition:
-    id: a9db38f9-9fdc-478c-b0f9-464221e58316
-  enabled: false
-  inputs:
-    additionalFields: '{}'
-    assignToRequestor: true
-    workItemType: Bug
-path: '\'
 process:
   phases:
   - condition: succeeded()
